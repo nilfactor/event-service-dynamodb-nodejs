@@ -20,7 +20,7 @@ custom:
   config:
     concurrency: 5
     sqs-queue: event-service-queue
-    dynamodb-name: event-service-db
+    dynamodb-name: event-service-table
     memory: 256
 
 provider:

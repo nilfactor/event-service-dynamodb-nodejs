@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "handler.js",
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.300.0"
+  },
   "devDependencies": {
+    "aws-sdk-mock": "^4.1.0",
     "babel-eslint": "^8.2.6",
     "eslint": "^5.4.0",
     "eslint-config-airbnb-base": "^13.1.0",
@@ -12,7 +15,13 @@
     "jest": "^23.5.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest ."
+    "lint": "./node_modules/.bin/eslint .",
+    "pretest": "npm run lint",
+    "test": "./node_modules/.bin/jest --coverage .",
+    "test:watch": "./node_modules/.bin/jest --watch .",
+    "predeploy": "npm run lint",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
   },
   "repository": {
     "type": "git",
