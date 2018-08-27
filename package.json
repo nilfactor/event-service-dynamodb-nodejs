@@ -13,7 +13,14 @@
     "jest": "^23.5.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest . --coverage"
+
+    "lint": "./node_modules/.bin/eslint .",
+    "pretest": "npm run lint",
+    "test": "./node_modules/.bin/jest --coverage .",
+    "test:watch": "./node_modules/.bin/jest --watch .",
+    "predeploy": "npm run lint",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove"
   },
   "repository": {
     "type": "git",
